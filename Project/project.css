@@ -1,0 +1,134 @@
+#wrapper {
+    background-color: whitesmoke;
+}
+
+header {
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    height: 128px;
+    padding-left: 105px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    background-color: white;
+    background-repeat: no-repeat;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+main {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.container {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.small-container {
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.col-1 {
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+}
+.col-1 img {
+    width: 100%;
+}
+nav {
+    font-size: 0.625rem;
+    letter-spacing: 3.2px;
+    text-transform: uppercase;
+}
+
+nav a { text-decoration: none; }
+nav a:link {
+    color: black; /* unvisited links */
+}
+a:visited {
+    color: black; /* visited links */
+}
+a:hover {
+    color: gray;
+}
+
+nav ul {
+    list-style-type: square;
+    padding-left: 0;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    font-size: 1.25em;
+}
+
+nav li {
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 100%;
+    border-bottom: none;
+}
+
+
+
+
+footer {
+    background-color: gray;
+    font-size: small;
+    font-style: italic;
+    text-align: center;
+    padding: 1em;
+    border-top: 2px #8C3826 ;
+    grid-area: footer;
+}
+
+
+form {
+    width: 40%;
+    display: grid;
+    grid-template-columns: 6em 1fr;
+    gap: 1em;
+}
+
+input[type="submit"] {
+    grid-column: 2;
+    width: 9em;
+}
+
+
+
+@media (min-width: 600px)
+  {
+    @supports (display: grid) {
+      header { grid-area: header; }
+      nav { grid-area: nav; }
+      main { grid-area: main; }
+      footer { grid-area: footer; }
+      #wrapper {
+        display: grid;
+        grid-template:
+          "header header"
+          "nav main"
+          "footer footer"
+          / 200px ; }
+      nav ul { flex-direction: column; }
+    }
+}
